@@ -6,5 +6,10 @@
     "build": "cd web && npm install && npm run build",
     "dev": "cd web && npm run dev",
     "start": "cd web && npm run start"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   }
 }
