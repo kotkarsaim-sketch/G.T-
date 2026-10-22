@@ -1,0 +1,63 @@
+jurisdiction:
+  code: rivermont
+  name: City of Rivermont
+
+# Clerk-curated cross-references between instruments. The LLM enrichment pass
+# supplements these automatically; explicit entries here take precedence
+# because they are reviewed legal metadata, not model output.
+cross_references:
+  - from_instrument: "2024-112"
+    from_article: "1"
+    to_instrument: "2023-047"
+    to_article: "1"      # 'dwelling unit' definition adopted by reference
+  - from_instrument: "2023-047"
+    from_article: "4"
+    to_instrument: "2024-112"
+    to_article: "5"      # beekeeping exemption in the noise by-law
+
+instruments:
+  - id: rivermont-bylaw-2024-112
+    kind: bylaw
+    number: "2024-112"
+    title: Noise Control By-law
+    enacted_on: "2024-06-17"
+    effective_from: "2024-07-01"
+    status: in_force
+    language: en
+    source_url: https://example.org/rivermont/bylaws/2024-112
+    file: noise-control-bylaw.txt
+
+  - id: rivermont-bylaw-2023-047
+    kind: bylaw
+    number: "2023-047"
+    title: Animal Control By-law
+    enacted_on: "2023-11-06"
+    effective_from: "2024-01-01"
+    status: in_force
+    language: en
+    source_url: https://example.org/rivermont/bylaws/2023-047
+    file: animal-control-bylaw.txt
+
+  - id: rivermont-bylaw-2016-009
+    kind: bylaw
+    number: "2016-009"
+    title: Fence and Structure Height By-law (repealed)
+    enacted_on: "2016-03-21"
+    effective_from: "2016-05-01"
+    effective_to: "2024-07-01"
+    status: repealed
+    language: en
+    source_url: https://example.org/rivermont/bylaws/2016-009
+    file: fence-height-bylaw-repealed.txt
+
+  # Amendment awaiting the clerk's review gate; invisible to current-law
+  # retrieval until published via `python -m civic.tools.publish --number 2025-031`.
+  - id: rivermont-bylaw-2025-031
+    kind: bylaw
+    number: "2025-031"
+    title: Noise Control Amendment By-law
+    enacted_on: "2026-08-12"
+    status: pending_review
+    language: en
+    source_url: https://example.org/rivermont/bylaws/2025-031
+    file: noise-amendment-2025-031.txt

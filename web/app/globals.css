@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+.answer-text sup {
+  @apply mx-px;
+}
+
+.answer-text sup a {
+  @apply rounded-sm px-0.5 text-civic-700 underline decoration-civic-300 underline-offset-2 hover:bg-civic-50 no-underline;
+}

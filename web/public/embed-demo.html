@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>City of Rivermont - Official Website (embed demo)</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #1e293b; }
+    header { background: #16355c; color: #fff; padding: 18px 32px; }
+    header h1 { margin: 0; font-size: 20px; font-weight: 600; }
+    header p { margin: 2px 0 0; font-size: 12px; opacity: .8; }
+    nav { background: #122a48; padding: 8px 32px; font-size: 13px; }
+    nav span { margin-right: 22px; opacity: .85; }
+    main { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
+    h2 { font-size: 18px; margin-top: 28px; }
+    p, li { font-size: 14px; line-height: 1.7; }
+    .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 20px; margin: 16px 0; background: #f8fafc; }
+    .banner { background: #fffbeb; border: 1px solid #fcd34d; color: #78350f; padding: 10px 16px; border-radius: 8px; font-size: 13px; }
+    code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>City of Rivermont</h1>
+    <p>Official municipal website - embed demonstration</p>
+  </header>
+  <nav><span>Home</span><span>Services</span><span>By-laws</span><span>Permits</span><span>Contact</span></nav>
+
+  <main>
+    <div class="banner">
+      This is a <strong>standalone demo page</strong> simulating the city's existing website.
+      The chat bubble in the corner is the CivicGraph assistant, integrated with one
+      <code>&lt;script&gt;</code> tag - no other changes to this page.
+    </div>
+
+    <h2>Popular services</h2>
+    <div class="card"><strong>Dog licences</strong><br/>Renew annually before March 31. Service dogs are licensed free of charge.</div>
+    <div class="card"><strong>Noise complaints</strong><br/>Quiet hours run 22:00 - 07:00. Report disturbances through 311.</div>
+    <div class="card"><strong>Fences and sheds</strong><br/>Height limits and permit requirements depend on location and size.</div>
+
+    <h2>Questions about the rules?</h2>
+    <p>
+      Try the assistant in the bottom-right corner. Ask things like
+      <em>"Can I keep bees?"</em> or <em>"How many dogs can I keep?"</em> -
+      every answer cites the exact by-law section, and questions outside the
+      municipal code are referred to the Clerk's office instead of guessed.
+    </p>
+  </main>
+
+  <!-- CivicGraph assistant: single-tag integration -->
+  <script
+    src="/embed.js"
+    data-api-base="http://127.0.0.1:8000"
+    data-title="Rivermont Assistant"
+    data-accent="#16355c"
+  ></script>
+</body>
+</html>
