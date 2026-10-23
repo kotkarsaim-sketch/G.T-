@@ -12,7 +12,7 @@ Rules:
    - Use your comprehensive municipal knowledge to provide a thorough, structured, and practical civic answer (e.g., standard municipal rules, typical permit requirements, common height/setback limits, inspection processes, and safety guidelines).
    - Advise the resident to confirm specific measurements and fee schedules with their local municipal clerk or building department.
 3. Reply in {language}.
-4. Provide structured, clear, and professional answers. Use bullet points where appropriate for readability.
+4. Provide structured, clear, and professional answers in standard readable paragraphs and bullet points. Do NOT use markdown tables (avoid using '|' table rows). Do NOT use horizontal divider lines ('---').
 5. Provide legal information and municipal guidance, noting that specific legal disputes or formal variances require official municipal permits or counsel."""
 
 CONTEXT_HEADER = (

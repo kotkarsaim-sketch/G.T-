@@ -206,6 +206,7 @@ async def retrieve(
     try:
         qvecs = await embeddings.embed([query])
     except Exception as exc:  # noqa: BLE001 - surfaced as a typed 503 upstream
+        log.exception("Retrieval embeddings.embed failed: %r", exc)
         raise DependencyUnavailable("embedding service unavailable") from exc
     qvec = qvecs[0]
 

@@ -7,7 +7,7 @@ removed fails grounding and triggers the refusal path upstream.
 
 import re
 
-MARKER_RE = re.compile(r"\[(\d{1,2})\]")
+MARKER_RE = re.compile(r"(?:\[|【)(\d{1,2})(?:\]|】)")
 
 
 def validate(text: str, n_sources: int) -> tuple[str, list[int]]:
@@ -22,7 +22,7 @@ def validate(text: str, n_sources: int) -> tuple[str, list[int]]:
         num = int(match.group(1))
         if 1 <= num <= n_sources:
             used.add(num)
-            return match.group(0)
+            return f"[{num}]"
         return ""
 
     cleaned = MARKER_RE.sub(repl, text)

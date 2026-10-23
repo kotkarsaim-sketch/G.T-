@@ -106,6 +106,11 @@
 
   function addBot() {
     var m = el("div", "msg bot", "");
+    var content = el("div", "bot-content", "");
+    var wm = el("div", "bot-watermark", "CIVICGRAPH");
+    wm.style.cssText = "text-align:right;font-size:9px;color:#cbd5e1;font-weight:600;letter-spacing:0.05em;margin-top:4px;";
+    m.appendChild(content);
+    m.appendChild(wm);
     msgs.appendChild(m);
     msgs.scrollTop = msgs.scrollHeight;
     return m;
@@ -115,7 +120,7 @@
     if (!sources || !sources.length) return;
     var box = el("div", "cites");
     sources.forEach(function (s) {
-      var line = el("div", null, "[" + s.n + "] " + s.instrument.title + ", s. " + s.article.number + " ");
+      var line = el("div", null, s.instrument.title + ", s. " + s.article.number + " ");
       if (s.url) {
         var a = document.createElement("a");
         a.href = s.url;
@@ -161,7 +166,8 @@
 
         function handle(data) {
           if (eventName === "token" && data.text) {
-            bot.textContent += data.text;
+            var c = bot.querySelector(".bot-content") || bot;
+            c.textContent = (c.textContent + data.text).replace(/(?:\[|【)\s*\d{1,3}\s*(?:\]|】)/g, "");
             msgs.scrollTop = msgs.scrollHeight;
           } else if (eventName === "notice" && data.text) {
             noticeBox = el("div", "notice", data.text);

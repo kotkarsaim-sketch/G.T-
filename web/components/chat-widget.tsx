@@ -121,17 +121,20 @@ export default function ChatWidget() {
                 </p>
               ) : (
                 <div key={i} className="mr-auto max-w-[92%] space-y-2">
-                  <div className="rounded-2xl rounded-bl-sm border border-slate-200 bg-white px-3 py-2 text-sm leading-relaxed text-slate-800">
+                  <div className="relative rounded-2xl rounded-bl-sm border border-slate-200 bg-white px-3 py-2 pb-5 text-sm leading-relaxed text-slate-800">
                     <AnswerText text={m.text} />
                     {m.notice && (
                       <p className="mt-2 rounded-md border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">{m.notice}</p>
                     )}
+                    <div className="absolute bottom-1 right-2.5 text-[9px] font-semibold tracking-wider text-slate-300 uppercase select-none pointer-events-none">
+                      CivicGraph
+                    </div>
                   </div>
                   {m.sources && m.sources.length > 0 && (
                     <ul className="space-y-1 pl-1 text-xs text-slate-500">
                       {m.sources.map((s) => (
                         <li key={s.n}>
-                          [{s.n}] {s.instrument.title}, s. {s.article.number}
+                          {s.instrument.title}, s. {s.article.number}
                           {s.url && (
                             <>
                               {" "}
